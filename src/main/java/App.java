@@ -1,5 +1,4 @@
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import bot.Bot;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException;
@@ -7,17 +6,19 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException;
 /**
  * @author Egor <Egor.Larochkin@centre-it.com> 03.08.2019
  */
-public class Main {
+public class App {
 
-    private static final Logger logger = LoggerFactory.getLogger(Bot.class);
 
     public static void main(String[] args) {
+        System.getProperties().put( "proxySet", "true" );
+        System.getProperties().put( "socksProxyHost", "127.0.0.1" );
+        System.getProperties().put( "socksProxyPort", "9150" );
         ApiContextInitializer.init();
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
         try {
             telegramBotsApi.registerBot(Bot.getBot());
         } catch (TelegramApiRequestException e) {
-            logger.error(e.toString());
+            e.printStackTrace();
         }
     }
 }

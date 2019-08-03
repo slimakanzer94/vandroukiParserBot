@@ -20,13 +20,6 @@
             <artifactId>telegrambots</artifactId>
             <version>4.3.1</version>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.25</version>
-        </dependency>
     </dependencies>
 
     <build>
@@ -39,7 +32,7 @@
                     <assembleDirectory>target</assembleDirectory>
                     <programs>
                         <program>
-                            <mainClass>Main</mainClass>
+                            <mainClass>App</mainClass>
                             <name>TravellingLobsterBot</name>
                         </program>
                     </programs>

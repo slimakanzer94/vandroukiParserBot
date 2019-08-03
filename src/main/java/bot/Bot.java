@@ -1,5 +1,5 @@
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+package bot;
+
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -18,9 +18,11 @@ public class Bot extends TelegramLongPollingBot {
 
     private static final String name = "TravellingLobsterBot";
     private static final String token = "AAHCBajdJAUAVNKDd5t5Q7opsZ1BX1RScBQ";
-    private static final Logger logger = LoggerFactory.getLogger(Bot.class);
 
     private static Bot bot = new Bot();
+
+    private Bot() {
+    }
 
     public static Bot getBot() {
         return bot;
@@ -53,7 +55,7 @@ public class Bot extends TelegramLongPollingBot {
         try {
             execute(sendMessage);
         } catch (TelegramApiException e) {
-            logger.error(e.toString());
+            e.printStackTrace();
         }
     }
 
