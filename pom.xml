@@ -39,7 +39,7 @@
                     <assembleDirectory>target</assembleDirectory>
                     <programs>
                         <program>
-                            <mainClass>com.home.server.TelegramBot</mainClass>
+                            <mainClass>Main</mainClass>
                             <name>TravellingLobsterBot</name>
                         </program>
                     </programs>
